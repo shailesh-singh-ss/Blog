@@ -31,7 +31,7 @@ export class DatabaseService {
                 }
             )
         } catch (error) {
-            console.log("Appwrite databaseService :: creatPost :: error", error);
+            console.log("Appwrite databaseService :: createPost :: error", error);
         }
     }
 
