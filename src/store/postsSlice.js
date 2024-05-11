@@ -12,7 +12,6 @@ const postsSlice = createSlice({
         saveData: (state, action) => {
             state.status = true;
             state.userPosts = action.payload;
-            console.log(state.userPosts);
         },
         removeData: (state) => {
             state.status = false;
