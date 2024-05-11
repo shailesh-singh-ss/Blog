@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import databaseService from '../appwrite/config'
 import { Container, PostCard } from '../components'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { saveData } from '../store/postsSlice'
 
-function Home() {
+function MyPosts() {
     const [posts, setPosts] = useState([])
     const postsStatus = useSelector(state => state.posts.status)
     const dispatch = useDispatch()
     const userPosts = useSelector(state => state.posts.userPosts)
-
+    const userData = useSelector(state => state.auth.userData)
+    
     useEffect(() => {
         if (postsStatus) {
             setPosts(userPosts.documents)
@@ -21,28 +22,17 @@ function Home() {
                 }
             })
         }
-    },[])
+        
+    }, [])
+    
 
-  if (posts.length === 0) {
-      return (
-          <div className=' w-full py-8 my-36 text-center'>
-              <Container>
-                  <div className='flex flex-wrap'>
-                      <div className='p-2 w-full'>
-                          <h1 className='text-2xl font-bold hover:text-gray-500'>
-                              Login to read posts
-                          </h1>
-                      </div>
-                  </div>
-              </Container>
-        </div>
-    )
-    }
+    
+    
     return (
         <div className='w-full py-8'>
             <Container>
                 <div className='flex flex-wrap'>
-                    {posts.toReversed().map((post) => (
+                    {posts.toReversed().map((post) => ((post.userId === userData.$id) &&
                         <div key={post.$id} className='p-2 w-1/4'>
                             <PostCard {...post} />
                         </div>
@@ -53,4 +43,4 @@ function Home() {
     )
 }
 
-export default Home
+export default MyPosts

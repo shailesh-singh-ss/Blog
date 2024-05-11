@@ -1,9 +1,13 @@
 import React from 'react'
 
-function Logo({width = '100px'}) {
+function Logo({width ='w-16'}) {
   return (
     <div>
-      Logo
+      <img
+        src='logo.png'
+        alt='Logo' 
+        className={`flex ${width}`}
+      />
     </div>
   )
 }

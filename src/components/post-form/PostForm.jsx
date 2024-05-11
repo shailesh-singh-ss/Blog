@@ -4,7 +4,8 @@ import { Button, Input, Select, RTE } from '../index'
 import databaseService from '../../appwrite/config'
 import storageService from '../../appwrite/buck'
 import { useNavigate } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { removeData } from '../../store/postsSlice'
 
 function PostForm({post}) {
     const { register, handleSubmit, watch, setValue, control, getValues } = useForm({
@@ -17,6 +18,7 @@ function PostForm({post}) {
     })
     const navigate = useNavigate()
     const userData = useSelector(state => state.auth.userData)
+    const dispatch = useDispatch()
 
     const submit = async (data) => {
         if (post) {
@@ -32,6 +34,7 @@ function PostForm({post}) {
             })
             if (dbPost) {
                 navigate(`/post/${dbPost.$id}`)
+                dispatch(removeData())
             }
         } else {
             const file = await storageService.uploadFile(data.image[0])
@@ -44,6 +47,7 @@ function PostForm({post}) {
                 })
                 if (dbPost) {
                     navigate(`/post/${dbPost.$id}`)
+                    dispatch(removeData())
                 }
             }
         }
