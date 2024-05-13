@@ -54,7 +54,7 @@ function PostForm({post}) {
                 }
             }
         } catch (error) {
-            alert("Document with this title is already exits.");
+            alert(error.message);
             if (file) {
                 storageService.deleteFile(file.$id);
             }
