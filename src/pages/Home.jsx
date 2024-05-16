@@ -42,7 +42,7 @@ function Home() {
         <div className='w-full py-8'>
             <Container>
                 <div className='flex flex-wrap'>
-                    {posts.toReversed().map((post) => (
+                    {posts.toReversed().map((post) => ( (post.status === "active") &&
                         <div key={post.$id} className='p-2 sm:w-1/4 w-full'>
                             <PostCard {...post} />
                         </div>
