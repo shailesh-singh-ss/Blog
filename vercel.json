@@ -2,31 +2,31 @@
     "routes": [
         {
             "src": "/",
-            "dist": "/"
+            "dest": "/"
         },
         {
             "src": "/login",
-            "dist": "/" 
+            "dest": "/" 
         },
         {
             "src": "/signup",
-            "dist": "/"  
+            "dest": "/"  
         },
         {
             "src": "/my-posts",
-            "dist": "/"
+            "dest": "/"
         },
         {
             "src": "/add-post",
-            "dist": "/"
+            "dest": "/"
         },
         {
             "src": "/edit-post/:slug",
-            "dist": "/"
+            "dest": "/"
         },
         {
             "src": "/post/:slug",
-            "dist": "/"
+            "dest": "/"
         }
     ]
 }
