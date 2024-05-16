@@ -1,0 +1,32 @@
+{
+    "routes": [
+        {
+            "src": "/",
+            "dist": "/"
+        },
+        {
+            "src": "/login",
+            "dist": "/" 
+        },
+        {
+            "src": "/signup",
+            "dist": "/"  
+        },
+        {
+            "src": "/my-posts",
+            "dist": "/"
+        },
+        {
+            "src": "/add-post",
+            "dist": "/"
+        },
+        {
+            "src": "/edit-post/:slug",
+            "dist": "/"
+        },
+        {
+            "src": "/post/:slug",
+            "dist": "/"
+        }
+    ]
+}
