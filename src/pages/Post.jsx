@@ -43,7 +43,7 @@ function Post() {
                     <img
                         src={storageService.getFilePreview(post.featuredImage)}
                         alt={post.title}
-                        className=' rounded-xl'
+                        className=' rounded-xl object-cover max-h-96 w-full'
                     />
 
                     {isAuthor && (
