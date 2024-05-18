@@ -63,6 +63,9 @@ function Post() {
                     <h1 className='text-2xl font-bold'>
                         {post.title}
                     </h1>
+                    <h2 className=' italic text-right'>
+                        ~{post.userName}
+                    </h2>
                 </div>
                 <div className='browser-css'>
                     {parse(post.content)}
