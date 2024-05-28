@@ -4,7 +4,7 @@ function Logo({width ='w-16'}) {
   return (
     <div>
       <img
-        src='logo.png'
+        src='/logo.png'
         alt='Logo' 
         className={`flex ${width}`}
       />
