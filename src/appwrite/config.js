@@ -56,6 +56,37 @@ export class DatabaseService {
         }
     }
 
+    async updateLike(slug, likes) {
+        try {
+            return await this.databases.updateDocument(
+                conf.appwriteDatabaseId,
+                conf.appwriteCollectionId,
+                slug,
+                {
+                    likes,
+                }
+            )
+        } catch (error) {
+            console.log("Appwrite databaseService :: updateLike :: error", error);
+            throw (error);
+        }
+    }
+
+    async updateComment(slug, comments) {
+        try {
+            return await this.databases.updateDocument(
+                conf.appwriteDatabaseId,
+                conf.appwriteCollectionId,
+                slug,
+                {
+                    comments
+                }
+            )
+        } catch (error) {
+            
+        }
+    }
+
     async deletePost(slug) {
         try {
             await this.databases.deleteDocument(

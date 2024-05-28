@@ -21,28 +21,28 @@ function Home() {
                 }
             })
         }
-    },[])
+    }, [])
 
-  if (posts.length === 0) {
-      return (
-          <div className=' w-full py-8 my-36 text-center'>
-              <Container>
-                  <div className='flex flex-wrap'>
-                      <div className='p-2 w-full'>
-                          <h1 className='text-2xl font-bold hover:text-gray-500'>
-                              Login to read posts
-                          </h1>
-                      </div>
-                  </div>
-              </Container>
-        </div>
-    )
+    if (posts.length === 0) {
+        return (
+            <div className=' w-full py-8 my-36 text-center'>
+                <Container>
+                    <div className='flex flex-wrap'>
+                        <div className='p-2 w-full'>
+                            <h1 className='text-2xl font-bold hover:text-gray-500'>
+                                Login to read posts
+                            </h1>
+                        </div>
+                    </div>
+                </Container>
+            </div>
+        )
     }
     return (
         <div className='w-full py-8'>
             <Container>
                 <div className='flex flex-wrap'>
-                    {posts.toReversed().map((post) => ( (post.status === "active") &&
+                    {posts.toReversed().map((post) => ((post.status === "active") &&
                         <div key={post.$id} className='p-2 sm:w-1/4 w-full'>
                             <PostCard {...post} />
                         </div>
