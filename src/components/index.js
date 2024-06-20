@@ -12,6 +12,7 @@ import PostCard from './PostCard'
 import Select from './Select'
 import Signup from './Signup'
 import PostForm from './post-form/PostForm'
+import Likes from "./Likes";
 
 export {
     Header,
@@ -27,6 +28,7 @@ export {
     PostCard,
     Select,
     Signup,
-    PostForm
+    PostForm,
+    Likes
 
 }

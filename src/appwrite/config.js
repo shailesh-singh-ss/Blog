@@ -56,7 +56,7 @@ export class DatabaseService {
         }
     }
 
-    async updateLike(slug, likes) {
+    async updateLike(slug, likes, dislikes) {
         try {
             return await this.databases.updateDocument(
                 conf.appwriteDatabaseId,
@@ -64,6 +64,7 @@ export class DatabaseService {
                 slug,
                 {
                     likes,
+                    dislikes,
                 }
             )
         } catch (error) {

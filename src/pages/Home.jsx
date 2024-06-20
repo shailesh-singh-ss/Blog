@@ -10,6 +10,9 @@ function Home() {
     const dispatch = useDispatch()
     const userPosts = useSelector(state => state.posts.userPosts)
 
+    // difene a function for get posts  from user or from database
+    // if user posts is empty get posts from database else get posts from user posts from redux store 
+    
     useEffect(() => {
         if (postsStatus) {
             setPosts(userPosts.documents)
@@ -22,6 +25,8 @@ function Home() {
             })
         }
     }, [])
+
+    // if posts is empty show login message
 
     if (posts.length === 0) {
         return (
@@ -38,6 +43,8 @@ function Home() {
             </div>
         )
     }
+
+    // if posts is not empty show posts cards 
     return (
         <div className='w-full py-8'>
             <Container>

@@ -4,8 +4,13 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 function Header() {
+  
+  // authStatus state to check if user is logged in or not
+
   const authStatus = useSelector((state) => state.auth.status)
   const navigate = useNavigate()
+
+  // navItems array to hold all the nav items for the header component 
 
   const navItems = [
     {
