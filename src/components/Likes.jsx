@@ -57,7 +57,7 @@ function Likes({post,userData}) {
             }
         })
         setCount(likes.length - dislikes.length);
-    },[post])
+    })
 
   return (
     <div className='w-full flex text-2xl px-3 font-bold gap-4 '>
